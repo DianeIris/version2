@@ -1,247 +1,774 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+body {
   margin: 0;
-  padding: 0;
+  font-family: var(--ar-body-font-family);
+  font-size: var(--ar-body-font-size);
+  font-weight: var(--ar-body-font-weight);
+  line-height: var(--ar-body-line-height);
+  color: var(--ar-body-color);
+  text-align: var(--ar-body-text-align);
+  background-color: var(--ar-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+header img {
+  height: 50px;
 }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+nav {
+  display: flex;
+  gap: 20px;
+}
+main {
+  padding: 20px;
+}
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #007bff;
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle-container input {
+  display: none;
+}
+.toggle-label {
+  cursor: pointer;
+  background-color: #333;
+  border-radius: 20px;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.toggle-label::before {
+  content: '';
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+.toggle-container input:checked + .toggle-label::before {
+  transform: translateX(20px);
+}
+.cta {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.cta:hover {
+  background-color: #333;
+}
+.hero {
+  background-image: url('dex-globe-img.svg');
+  background-size: cover;
+  background-position: bottom;
+  height: 7%;
+  text-align: start;
+  
+  
+
+
+  background-color: #1c1c1c;
+  color: #fff;
+  
+  padding: 100px 20px;
+}
+.hero h1 {
+  
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ar-heading-col);
+  font-size: calc(1.375rem + 1.5vw)
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+.highlight {
+  color: #d35400; /* Orange color */
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.cta-section {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
+.cta-section .cta-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-buttons .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cta-buttons .start-trial {
+  background-color: #d35400;
+  color: white;
+}
+
+.cta-buttons .offer {
+  background-color: #f1c40f;
+  color: white;
+}
+
+.why-work-section {
+  background-color: #ececec;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.why-work-section .why-work-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why-work-section .next-level {
+  background-color: #000;
+  color: #f1c40f;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.why-work-section h2 {
+  font-size: 32px;
   margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+  padding: 0;
+}
+.why-work-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.feature {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 45%;
+  text-align: left;
 }
 
-.clearfix::after {
-  clear: both;
+.feature img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.feature h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.feature p {
+  font-size: 16px;
+  color: #555;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+.solutions-section {
+  background-color: #f5f5ff;
+  padding: 50px 0;
+}
 
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+.solutions-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-box {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 45%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.solution-box h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.solution-box p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.solution-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+.services-section, .expertize-section {
+  padding: 20px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 300px;
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-title {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.expertize-section {
+  margin-top: 50px;
+}
+
+.expertize-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-button {
+  background-color: #f5a623;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tab-button.active {
+  background-color: #f5a623;
+  color: #000;
+}
+
+.tab-content {
+  max-width: 500px;
+}
+
+.image-container img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.highlight {
+  color: #f5a623;
+}
+h2 {
+  text-align: center;
+  color: #f5a623;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.it-consulting {
+  background-color: #121212;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.circle-container {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 2px dotted #ccc;
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.circle img:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+.circle img:nth-child(2) { top: 25%; left: 85%; transform: translateX(-50%); }
+.circle img:nth-child(3) { top: 65%; left: 85%; transform: translateX(-50%); }
+.circle img:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
+.circle img:nth-child(5) { top: 65%; left: 15%; transform: translateX(-50%); }
+.circle img:nth-child(6) { top: 25%; left: 15%; transform: translateX(-50%); }
+.circle img:nth-child(7) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.content {
+  margin-top: 20px;
+}
+
+.view-service {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.academy {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.academy-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.academy-content img {
+  width: 50%;
+  border-radius: 15px;
+}
+
+.academy-details {
+  width: 45%;
+  text-align: left;
+}
+
+.academy-details h3 {
+  color: #ffa500;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h4 {
+  color: #ffa500;
+  font-size: 2em;
+  margin: 0;
+}
+.learn-more {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.go-to-academy {
+  background-color: #d9534f;
+}
+
+.learn-more {
+  background-color: #f0ad4e;
+}
+
+.academy {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.academy-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.academy-content img {
+  width: 50%;
+  border-radius: 15px;
+}
+
+.academy-details {
+  width: 45%;
+  text-align: left;
+}
+
+.academy-details h3 {
+  color: #ffa500;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h4 {
+  color: #ffa500;
+  font-size: 2em;
+  margin: 0;
+}
+
+.sales-factory {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.sales-factory h2 {
+  margin-bottom: 20px;
+}
+
+.sales-factory p {
+  margin-bottom: 20px;
+}
+
+.sales-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales-content img {
+  width: 50%;
+  border-radius: 15px;
+}
+
+.sales-content button {
+  background-color: #f0ad4e;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.services {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.service {
+  text-align: center;
+  max-width: 300px;
+}
+
+.service .icon {
+  background-color: #795548;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.service .icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.service h3 {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #666;
+  font-size: 1em;
+}
+
+.work {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.work-image {
+  flex: 1;
+}
+
+.work-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.work-content {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.work-content h2 {
+  color: #ffca28;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.work-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.work-content button {
+  background-color: #ffca28;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.work-content button:hover {
+  background-color: #ffb300;
+}
+.her {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 2rem;
+}
+
+.her h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.job-title {
+  color: #666;
+  margin-top: 0;
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 4px solid #333;
+}
+
+.more-from-dex {
+  margin-top: 2rem;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.card {
+  width: 48%;
+  padding: 1.5rem;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.brown {
+  background-color: #8B4513;
+}
+
+.dark {
+  background-color: #1C1C1C;
+}
+
+.contact {
+  margin-top: 2rem;
+  background-color: #1C1C1C;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.contact h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+#contact-form p {
+  color: #ff0000;
+  text-align: center;
+}
+.flag {
+  width: 20px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.phone-numbers p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.phone-numbers, .address-email {
+  width: 45%;
+}
+
+.phone-numbers h3, .address h3, .email h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+.address p, .email p {
+  margin: 0.5rem 0;
+}
+.icon {
+  margin-right: 0.5rem;
+}
+
+footer {
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+      flex-direction: column;
   }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
+  
+  .phone-numbers, .address-email {
+      width: 100%;
+      margin-bottom: 1rem;
   }
 }
+
 
